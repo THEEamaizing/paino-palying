@@ -1,4 +1,4 @@
-include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
 void playSound(const std::string& filename) {
