@@ -1,12 +1,20 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <iostream>
+
 
 void playSound(const std::string& filename) {
     sf::SoundBuffer buffer;
-    if (!buffer.loadFromFile(filename)) return; // Handle error
+
+    if (!buffer.loadFromFile("/home/ambilikisye/Desktop/paino-palying/piano playing/sounds/" + filename)) {
+        std::cerr << "Error loading sound file: " << filename << std::endl;
+        return; // Exit if file cannot be loaded
+    }
+    std::cerr << "succsefully loading sound file: " << filename << std::endl;
     sf::Sound sound(buffer);
     sound.play();
 }
+
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Digital Piano");
@@ -18,8 +26,8 @@ int main() {
                 window.close();
             if (event.type == sf::Event::KeyPressed) {
                 switch (event.key.code) {
-                    case sf::Keyboard::A: playSound("noteA.wav"); break;
-                    case sf::Keyboard::S: playSound("noteB.wav"); break;
+                    case sf::Keyboard::A: playSound("wavA.wav"); break;
+                    case sf::Keyboard::S: playSound("wavB.wav"); break;
                     // Add more cases for other keys
                 }
             }
