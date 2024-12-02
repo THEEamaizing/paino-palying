@@ -1,24 +1,25 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
-
+#include <vector>
 
 void playSound(const std::string& filename) {
-    static std::vector<sf::Sound> sounds;
+    static std::vector<sf::Sound> sounds; // Keep sounds alive
     sf::SoundBuffer buffer;
-
-   
-
 
     if (!buffer.loadFromFile("/home/ambilikisye/Desktop/paino-palying/piano playing/sounds/" + filename)) {
         std::cerr << "Error loading sound file: " << filename << std::endl;
         return; // Exit if file cannot be loaded
     }
-    std::cerr << "succsefully loading sound file: " << filename << std::endl;
+    
+    std::cerr << "Successfully loading sound file: " << filename << std::endl;
+    
     sf::Sound sound(buffer);
     sound.play();
+    
+    // Store sound in vector to keep it alive
+    sounds.push_back(sound);
 }
-
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "Digital Piano");
