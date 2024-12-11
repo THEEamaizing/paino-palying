@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background: #ffffff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.book-item {
+    flex: 1 1 calc(33% - 20px);
+    margin: 10px;
+    background-color: #e7e7e7;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.rent-button {
+    background-color: #35424a;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.rent-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #35424a;
+    color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   .book-item {
+       flex-basis: calc(50% - 20px);
+   }
+}
+
+@media (max-width: 480px) {
+   nav ul li {
+       display: block; /* Stack navigation items on small screens */
+       margin-bottom: 10px; 
+   }
+   .book-item {
+       flex-basis: calc(100% - 20px);
+   }
+}
