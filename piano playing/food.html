@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Menu</title>
+</head>
+<body>
+    <h1>Our Menu</h1>
+    <form method="POST" action="/order">
+        {% for item, price in menu.items() %}
+            <label>
+                <input type="checkbox" name="items" value="{{ item }}">
+                {{ item }} ({{ price }})
+            </label><br>
+        {% endfor %}
+        <br>
+        <input type="submit" value="Order">
+    </form>
+</body>
+</html>
