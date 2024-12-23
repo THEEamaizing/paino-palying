@@ -1,4 +1,4 @@
-include  <iostream>
+#inlude <iostream>
 #include <vector>
 #include <string>
 
@@ -82,4 +82,23 @@ do {  /* Displaying menu option */
   }while (choice != 5);/// Repeate untill user select exit
 
    return 0;/// indictating successful execution
+}
+
+void Createitem(vector<item>&iteams) {
+    item newitems;
+
+    cout <<"\nEnter item ID:";
+    cin>> newitem.id;
+    cin.ignore();
+    
+    cout<<"Enter Item price"
+    cin>>newitem.price;///input item price
+
+    items.push_back(newitem);
+    cout<<"item created successfully!\n";/// message confirmation
+
+}
+
+void readitems(const vector<items>&items){
+    
 }
